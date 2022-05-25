@@ -18,7 +18,7 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test > npmtestresult-${{ matrix.node-version }}.txt
-      - uses: actionsupload-artifact@v3
+      - uses: actions/upload-artifact@v3
         with:
           name: npmresults
           path: npmtestresult-${{ matrix.node-version }}.txt
